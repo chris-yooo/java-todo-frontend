@@ -2,16 +2,18 @@ package com.example.backend;
 
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Data
 public class ToDo {
 
-    int id;
+    LocalDate id;
     String description;
     ToDoStatus status;
 
-    public ToDo(int id, String name, ToDoStatus status) {
+    public ToDo(LocalDate id, String description, ToDoStatus status) {
         this.id = id;
-        this.description = name;
+        this.description = description;
         this.status = status;
     }
 }

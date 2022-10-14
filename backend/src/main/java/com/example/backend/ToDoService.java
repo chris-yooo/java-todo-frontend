@@ -2,8 +2,8 @@ package com.example.backend;
 
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
-
 
 @Service
 public class ToDoService {
@@ -18,7 +18,7 @@ public class ToDoService {
         return toDoRepo.getList();
     }
 
-    public ToDo getToDoDetail(int id) {
+    public ToDo getToDoDetail(LocalDate id) {
         return toDoRepo.getToDoDetail(id);
     }
 
