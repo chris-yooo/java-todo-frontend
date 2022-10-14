@@ -12,9 +12,7 @@ import java.util.Objects;
 public class ToDoRepo {
 
 
-    private List<ToDo> toDoS = new ArrayList<>(List.of(
-            new ToDo(LocalDateTime.now().toString(), "Put Methode schreiben", ToDoStatus.IN_PROGRESS)
-    ));
+    private List<ToDo> toDoS = new ArrayList<>();
 
     public List<ToDo> getList() {
         return toDoS;
