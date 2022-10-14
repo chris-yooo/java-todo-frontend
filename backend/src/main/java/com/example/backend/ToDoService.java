@@ -2,7 +2,7 @@ package com.example.backend;
 
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -18,8 +18,22 @@ public class ToDoService {
         return toDoRepo.getList();
     }
 
-    public ToDo getToDoDetail(LocalDate id) {
+    public ToDo getToDoDetail(String id) {
         return toDoRepo.getToDoDetail(id);
     }
 
+    public ToDo addToDo(ToDo toDo) {
+        ToDo toDoWithDate =  new ToDo(
+                LocalDateTime.now().toString(),
+                toDo.getDescription(), ToDoStatus.OPEN);
+        return toDoRepo.addToDo(toDoWithDate);
+    }
+
+    public ToDo editToDo(ToDo toDo) {
+        return toDoRepo.editToDo(toDo);
+    }
+
+    public ToDo deleteToDo(String id) {
+        return toDoRepo.deleteToDo(id);
+    }
 }
